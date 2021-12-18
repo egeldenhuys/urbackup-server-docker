@@ -9,7 +9,7 @@ TARGETPLATFORM="linux/${ARCH}"
 docker build \
               --build-arg ARCH=${ARCH} \
               --build-arg VERSION=${VERSION} \
-              --build-arg IMAGE_ARCH=$([ "${ARCH}" == "armhf" ] && echo "arm32v7/debian:stretch" || ([ "${ARCH}" == "arm64" ] && echo "arm64v8/debian:stretch") || ([ "${BUILD_ARCH}" == "i386" ] && echo "i386/debian:stretch") || echo "debian:stretch") \
+              --build-arg IMAGE_ARCH=$([ "${ARCH}" == "armhf" ] && echo "arm32v7/debian:buster" || ([ "${ARCH}" == "arm64" ] && echo "arm64v8/debian:buster") || ([ "${BUILD_ARCH}" == "i386" ] && echo "i386/debian:buster") || echo "debian:buster") \
               --build-arg TARGETPLATFORM=${TARGETPLATFORM} \
               -t urbackup-server:${VERSION}_${ARCH} \
               .
